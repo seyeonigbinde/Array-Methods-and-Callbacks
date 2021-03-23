@@ -6,19 +6,27 @@ import { fifaData } from './fifa.js';
 Practice accessing data by console.log-ing the following pieces of data note, you may want to filter the data first 😉*/
 
 const newTeamFilter = fifaData.filter(function(element){
-    return element.Stage === 'Finals';
+    return element.Year === 2014 && element.Stage === 'Final';
 });
 
+console.log(`Task 1:`, newTeamFilter);
 //(a) Home Team name for 2014 world cup final
-// console.log (newTeamFilter."Home Team name");
+console.log (`Task 1a:`, newTeamFilter[0]['Home Team Name']);
 //(b) Away Team name for 2014 world cup final
-
+console.log (`Task 1b:`, newTeamFilter[0]['Away Team Name']);
 //(c) Home Team goals for 2014 world cup final
-
+console.log (`Task 1c:`, newTeamFilter[0]['Home Team Goals']);
 //(d) Away Team goals for 2014 world cup final
-
+console.log (`Task 1d:`, newTeamFilter[0]['Away Team Goals']);
 //(e) Winner of 2014 world cup final */
-console.log (`Task 1 e:`, newTeamFilter.Winner);
+if (newTeamFilter[0]['Home Team Goals'] >  newTeamFilter[0]['Away Team Goals']){
+    console.log (`Task 1e:`,  newTeamFilter[0]['Home Team Name'])
+}
+else{ 
+    console.log (`Task 1e:`, newTeamFilter[0]['Away Team Name'])
+};
+
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use getFinals to do the following:
@@ -94,6 +102,7 @@ function getWinnersByYear(array, getYearsCB, getWinnersCB) {
     })
 }
 console.log(getWinnersByYear(fifaData, getYears, getWinners))
+
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher order function getAverageGoals to do the following: 
  1. Receive the callback function getFinals from task 2 ensure you pass in the data as an argument
@@ -104,7 +113,7 @@ Use the higher order function getAverageGoals to do the following:
  Example of invocation: getAverageGoals(getFinals(fifaData));
 */
 
-function getAverageGoals(/* code here */) {
+function getAverageGoals() {
    /* code here */
 }
 
